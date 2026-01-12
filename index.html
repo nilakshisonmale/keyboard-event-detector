@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Event Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Keyboard Event Detector</h2>
+
+<!-- 4.1 Input Focus Area -->
+<div class="input-box">
+    <input type="text" id="inputField" placeholder="Click here and press keys">
+</div>
+
+<!-- 4.3 Key Information Display -->
+<div class="info">
+    <p>Key Value: <span id="keyValue">-</span></p>
+    <p>Key Code: <span id="keyCode">-</span></p>
+    <p>Event Type: <span id="eventType">-</span></p>
+    <p>
+        Shift: <span id="shift">false</span> |
+        Ctrl: <span id="ctrl">false</span> |
+        Alt: <span id="alt">false</span>
+    </p>
+</div>
+
+<!-- 4.5 Event Log -->
+<div id="log"></div>
+<button onclick="clearLog()">Clear Log</button>
+
+<script src="script.js"></script>
+</body>
+</html>
