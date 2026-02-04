@@ -1,36 +1,92 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background – softer & neutral (red-friendly) */
 body {
-    font-family: Arial;
-    padding: 20px;
+    min-height: 100vh;
+    background-color: #e8f1ff;   /* soft light blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Card container – BROADER */
+.card {
+    width: 520px;                /* increased width */
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 22px;
+    color: #000;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+/* Input box */
 .input-box {
-    border: 2px dashed gray;
-    padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
-.input-box:focus-within {
-    border-color: green;
-    background-color: #f0fff0;
-}
-
-input {
+.input-box input {
     width: 100%;
-    padding: 10px;
+    padding: 9px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    outline: none;
 }
 
+.input-box input:focus {
+    border-color: #4c7dff;
+}
+
+/* Info section */
+.info {
+    margin-bottom: 16px;
+}
+
+.info p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #333;
+}
+
+/* Log box */
 #log {
-    border: 1px solid #aaa;
-    height: 120px;
-    overflow-y: auto;
-    margin-top: 10px;
+    height: 160px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     padding: 10px;
+    margin-bottom: 18px;
+    background: #f9f9f9;
+    overflow-y: auto;
+    font-size: 13px;
 }
 
-.keydown {
-    color: green;
+/* Button – SAME red, looks better now */
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 9px 20px;
+    font-size: 14px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.keyup {
-    color: red;
+button:hover {
+    background-color: #b71c1c;
 }

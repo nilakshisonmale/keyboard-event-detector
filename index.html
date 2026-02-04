@@ -1,34 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Keyboard Event Detector</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>Keyboard Event Detector</h2>
+    <div class="card">
 
-<!-- 4.1 Input Focus Area -->
-<div class="input-box">
-    <input type="text" id="inputField" placeholder="Click here and press keys">
-</div>
+        <h2>Keyboard Event Detector</h2>
 
-<!-- 4.3 Key Information Display -->
-<div class="info">
-    <p>Key Value: <span id="keyValue">-</span></p>
-    <p>Key Code: <span id="keyCode">-</span></p>
-    <p>Event Type: <span id="eventType">-</span></p>
-    <p>
-        Shift: <span id="shift">false</span> |
-        Ctrl: <span id="ctrl">false</span> |
-        Alt: <span id="alt">false</span>
-    </p>
-</div>
+        <div class="input-box">
+            <input type="text" id="inputField" placeholder="Click here and press keys">
+        </div>
 
-<!-- 4.5 Event Log -->
-<div id="log"></div>
-<button onclick="clearLog()">Clear Log</button>
+        <div class="info">
+            <p><strong>Key Value:</strong> <span id="keyValue">-</span></p>
+            <p><strong>Key Code:</strong> <span id="keyCode">-</span></p>
+            <p><strong>Event Type:</strong> <span id="eventType">-</span></p>
+            <p>
+                <strong>Shift:</strong> <span id="shift">false</span> |
+                <strong>Ctrl:</strong> <span id="ctrl">false</span> |
+                <strong>Alt:</strong> <span id="alt">false</span>
+            </p>
+        </div>
 
-<script src="script.js"></script>
+        <div id="log"></div>
+
+        <button onclick="clearLog()">Clear Log</button>
+
+    </div>
+
+<script>
+    const input = document.getElementById("inputField");
+    const keyValue = document.getElementById("keyValue");
+    const keyCode = document.getElementById("keyCode");
+    const eventType = document.getElementById("eventType");
+    const shift = document.getElementById("shift");
+    const ctrl = document.getElementById("ctrl");
+    const alt = document.getElementById("alt");
+    const log = document.getElementById("log");
+
+    function logEvent(e) {
+        keyValue.textContent = e.key;
+        keyCode.textContent = e.keyCode;
+        eventType.textContent = e.type;
+        shift.textContent = e.shiftKey;
+        ctrl.textContent = e.ctrlKey;
+        alt.textContent = e.altKey;
+
+        const entry = document.createElement("div");
+        entry.textContent = `${e.type} → ${e.key} (${e.keyCode})`;
+        log.appendChild(entry);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    input.addEventListener("keydown", logEvent);
+    input.addEventListener("keyup", logEvent);
+
+    function clearLog() {
+        log.innerHTML = "";
+    }
+</script>
+
 </body>
 </html>
