@@ -6,20 +6,22 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Page background – softer & neutral (red-friendly) */
+/* Full screen layout */
 body {
     min-height: 100vh;
-    background-color: #e8f1ff;   /* soft light blue */
+    background-color: #e8f1ff;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px; /* prevents edge touching on mobile */
 }
 
-/* Card container – BROADER */
+/* Responsive Card */
 .card {
-    width: 520px;                /* increased width */
+    width: 90%;          /* responsive width */
+    max-width: 520px;    /* desktop max width */
     background: #ffffff;
-    padding: 28px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
@@ -27,61 +29,65 @@ body {
 /* Heading */
 h2 {
     text-align: center;
-    margin-bottom: 22px;
-    color: #000;
-    font-size: 23px;
-    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-/* Input box */
-.input-box {
-    margin-bottom: 16px;
-}
-
+/* Input */
 .input-box input {
     width: 100%;
-    padding: 9px 12px;
+    padding: 10px;
     font-size: 14px;
     border-radius: 6px;
     border: 1px solid #bbb;
-    outline: none;
+    margin-bottom: 6px;
 }
 
 .input-box input:focus {
     border-color: #4c7dff;
+    outline: none;
 }
 
-/* Info section */
-.info {
-    margin-bottom: 16px;
+/* Focus status */
+#focusStatus {
+    font-size: 12px;
+    color: red;
 }
 
+/* Info Section */
 .info p {
-    font-size: 14px;
     margin: 6px 0;
-    color: #333;
+    font-size: 14px;
 }
 
-/* Log box */
+/* Log Box */
 #log {
-    height: 160px;
+    height: 150px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 18px;
+    padding: 8px;
+    margin: 15px 0;
     background: #f9f9f9;
     overflow-y: auto;
     font-size: 13px;
 }
 
-/* Button – SAME red, looks better now */
+/* Different colors for events */
+.keydown {
+    color: green;
+}
+
+.keyup {
+    color: blue;
+}
+
+/* Button */
 button {
     display: block;
-    margin: 0 auto;
-    padding: 9px 20px;
+    width: 100%; /* full width on mobile */
+    padding: 10px;
     font-size: 14px;
     background-color: #d32f2f;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -89,4 +95,11 @@ button {
 
 button:hover {
     background-color: #b71c1c;
+}
+
+/* Extra small screen adjustment */
+@media (max-width: 400px) {
+    h2 {
+        font-size: 18px;
+    }
 }
